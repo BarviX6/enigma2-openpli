@@ -190,6 +190,10 @@
 		<key id="KEY_UP" mapto="moveUp" flags="mr" />
 		<key id="KEY_DOWN" mapto="moveDown" flags="mr" />
 		<key id="KEY_HOME" mapto="moveTop" flags="mr" />
+		<key id="KEY_CHANNELUP" mapto="pageUp" flags="mr" />
+		<key id="KEY_CHANNELDOWN" mapto="pageDown" flags="mr" />
+		<key id="KEY_PREVIOUS" mapto="moveTop" flags="mr" />
+		<key id="KEY_NEXT" mapto="moveEnd" flags="mr" />
 		<key id="KEY_END" mapto="moveEnd" flags="mr" />
 		<key id="KEY_PAGEUP" mapto="pageUp" flags="mr" />
 		<key id="KEY_PAGEDOWN" mapto="pageDown" flags="mr" />
@@ -923,11 +927,21 @@
 		<key id="KEY_EJECTCD" mapto="ejectcd_long" flags="l" />
 		<key id="KEY_VOD" mapto="vod" flags="b" />
 		<key id="KEY_VOD" mapto="vod_long" flags="l" />
+		<key id="KEY_TVSAT" mapto="tvsat" flags="m" />
+		<key id="KEY_PICASA" mapto="picasa" flags="m" />
+		<key id="KEY_SHOUTCAST" mapto="shoutcast" flags="m" />
+		<key id="KEY_YOUTUBE" mapto="youtube" flags="m" />
+		<key id="KEY_SPARK" mapto="spark" flags="m" />
+		<key id="KEY_FIND" mapto="find" flags="m" />
+		<key id="KEY_PLAYMODE" mapto="playmode" flags="b" />
+		<key id="KEY_PLAYMODE" mapto="playmode_long" flags="l" />
+		<key id="KEY_FILE" mapto="file" flags="m" />
+		<key id="KEY_USB" mapto="usb" flags="b" />
+		<key id="KEY_USB" mapto="usb_long" flags="l" />
+		<key id="KEY_PORTAL" mapto="portal" flags="b" />
+		<key id="KEY_PORTAL" mapto="portal_long" flags="l" />
+		<key id="KEY_SLOW" mapto="slow" flags="m" />
+		<key id="KEY_FAST" mapto="fast" flags="m" />
+		<key id="KEY_RECALL" mapto="recall" flags="m" />
 	</map>
-	<translate>
-		<device name="gigablue remote control">
-			<key from="KEY_OPTION" to="KEY_HELP" />
-			<key from="KEY_F2" to="KEY_SCREEN" />
-		</device>
-	</translate>
 </keymap>

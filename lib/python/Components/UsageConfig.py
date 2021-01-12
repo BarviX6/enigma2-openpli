@@ -132,7 +132,7 @@ def InitUsageConfig():
 	config.usage.leave_movieplayer_onExit = ConfigSelection(default = "popup", choices = [
 		("no", _("no")), ("popup", _("With popup")), ("without popup", _("Without popup")), ("movielist", _("Return to movie list")) ])
 
-	config.usage.setup_level = ConfigSelection(default = "simple", choices = [
+	config.usage.setup_level = ConfigSelection(default = "expert", choices = [
 		("simple", _("Normal")),
 		("intermediate", _("Advanced")),
 		("expert", _("Expert")) ])
@@ -565,7 +565,7 @@ def InitUsageConfig():
 	if SystemInfo["HasBypassEdidChecking"]:
 		def setHasBypassEdidChecking(configElement):
 			open(SystemInfo["HasBypassEdidChecking"], "w").write("00000001" if configElement.value else "00000000")
-		config.av.bypassEdidChecking = ConfigYesNo(default=False)
+		config.av.bypassEdidChecking = ConfigYesNo(default=True)
 		config.av.bypassEdidChecking.addNotifier(setHasBypassEdidChecking)
 
 	if SystemInfo["HasColorspace"]:

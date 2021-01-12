@@ -31,6 +31,7 @@
 #include <lib/python/python.h>
 #include <lib/python/pythonconfig.h>
 #include <lib/service/servicepeer.h>
+#include <lib/driver/vfd.h> // vfd class
 
 #include "bsod.h"
 #include "version_info.h"
@@ -235,7 +236,12 @@ int main(int argc, char **argv)
 	eWidgetDesktop dsk_lcd(my_lcd_dc->size());
 
 	dsk.setStyleID(0);
-	dsk_lcd.setStyleID(1);
+
+#ifdef HAVE_GRAPHLCD
+	dsk_lcd.setStyleID(my_lcd_dc->size().width() == 320 ? 1 : 2);
+#else
+	dsk_lcd.setStyleID(my_lcd_dc->size().width() == 96 ? 2 : 1);
+#endif
 
 /*	if (double_buffer)
 	{
@@ -289,6 +295,11 @@ int main(int argc, char **argv)
 	gRC::getInstance()->setSpinnerDC(my_dc);
 
 	eRCInput::getInstance()->keyEvent.connect(sigc::ptr_fun(&keyEvent));
+
+// initialise the vfd class
+	evfd * vfd = new evfd;
+	vfd->init();
+	delete vfd;
 
 	printf("[MAIN] executing main\n");
 
